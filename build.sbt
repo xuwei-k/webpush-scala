@@ -30,3 +30,5 @@ enablePlugins(PlayScala)
 javaOptions ++= sys.process.javaVmArguments.filter(
   a => Seq("-Xmx", "-Xms", "-XX").exists(a.startsWith)
 )
+
+licenses := Seq("MIT License" -> url("https://opensource.org/licenses/MIT"))
