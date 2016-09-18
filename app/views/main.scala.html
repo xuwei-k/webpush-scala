@@ -1,0 +1,69 @@
+@(publicKey: String, webjars: WebJarAssets)
+
+<html>
+<head>
+  <script type='text/javascript' src='@routes.WebJarAssets.at(webjars.locate("jquery.js"))'></script>
+  <script type='text/javascript' src='@routes.WebJarAssets.at(webjars.locate("clipboard.js"))'></script>
+</head>
+<body>
+
+@defaultPayload = {
+@(new java.text.SimpleDateFormat("yyyy/MM/dd HH:mm:ss").format(new java.util.Date) + " test ")
+}
+
+<div>
+  <button class="register" type="button" disabled>register ServiceWorker</button>
+
+  <br />
+
+  <button class="subscribe" type="button" disabled>Subscribe</button>
+  <button class="unsubscribe" type="button" disabled>Unsubscribe</button>
+
+  <hr />
+
+  <h2>send webpush</h2>
+  <div>
+    <div>
+      <label for="payload">payload</label>
+      <input type="text" id="payload" name="payload" value="@defaultPayload" style="width: 500px; height: 30px;" />
+    </div>
+    <div>
+      <label for="endpoint">endpoint</label>
+      <input type="text" id="endpoint" name="endpoint" style="width: 800px; height: 30px;" />
+    </div>
+    <div>
+      <label for="user_public_key">user public key</label>
+      <input type="text" id="user_public_key" name="user_public_key" style="width: 800px; height: 30px;" />
+    </div>
+    <div>
+      <label for="user_auth">user auth</label>
+      <input type="text" id="user_auth" name="user_auth" style="width: 800px; height: 30px;" />
+    </div>
+    <div>
+      <label for="ttl">ttl</label>
+      <input type="number" id="ttl" name="ttl" value="@(60 * 60 * 24)" />
+    </div>
+    <button id="submit_webpush_request">submit</button>
+  </div>
+
+  <h2>submit by curl</h2>
+  <div>
+    <button class="btn" data-clipboard-target="#submit_by_curl">copy to clipboard</button>
+    <pre style="background-color: #D3D3D3;"><code id="submit_by_curl"></code></pre>
+  </div>
+
+  <hr />
+
+  <h2>manage ServiceWorker</h2>
+  <ul>
+    <li><b>Chrome</b>: chrome://serviceworker-internals/</li>
+    <li><b>Firefox</b>: about:preferences#content</li>
+  </ul>
+</div>
+
+</body>
+
+<script type='text/javascript'>
+  @Html(views.js.main(publicKey).body)
+</script>
+</html>
