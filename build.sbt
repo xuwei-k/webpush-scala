@@ -3,7 +3,6 @@ scalaVersion := "2.11.8"
 name := "webpush-scala"
 
 libraryDependencies ++= (
-  ("nl.martijndwars" % "web-push" % "2.0.0") ::
   ("com.github.xuwei-k" %% "play-json-extra" % "0.4.0") ::
   ("org.webjars" % "clipboard.js" % "1.5.5") ::
   ("org.webjars" % "jquery" % "3.1.0") ::
@@ -32,3 +31,7 @@ javaOptions ++= sys.process.javaVmArguments.filter(
 )
 
 licenses := Seq("MIT License" -> url("https://opensource.org/licenses/MIT"))
+
+dependsOn(
+  uri("git://github.com/xuwei-k/web-push.git#b87fb75e50c237cb1633c792a5241a0bff06d39d")
+)

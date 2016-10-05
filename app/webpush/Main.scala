@@ -4,9 +4,12 @@ import javax.inject.Inject
 
 import play.api.mvc._
 import nl.martijndwars.webpush._
+import org.asynchttpclient.DefaultAsyncHttpClient
 import org.bouncycastle.jce.provider.BouncyCastleProvider
 import play.api.libs.json.{JsError, JsSuccess}
 
+import scala.concurrent.Await
+import scala.concurrent.duration._
 import scala.io.Source
 
 class Main @Inject()(webJarAssets: controllers.WebJarAssets) extends Controller {
@@ -35,18 +38,25 @@ class Main @Inject()(webJarAssets: controllers.WebJarAssets) extends Controller 
     request.body.validate[SendRequest] match {
       case JsSuccess(value, _) =>
         val notification = value.toNotification
-        val client = new PushService()
-        client.setPrivateKey(privateKey)
-        client.setPublicKey(publicKey)
-        val response = client.send(notification)
-        val status = response.getStatusLine.getStatusCode
-        val body = Source.fromInputStream(
-          response.getEntity.getContent
-        ).getLines().mkString("\n")
-        println("status = " + status)
-        println("body = " + body)
-        val s = new Status(status)
-        s(body)
+        val c = new DefaultAsyncHttpClient()
+
+        try {
+          val client = WebpushService.create(c)
+          val response = Await.result(client.send(
+            notification = notification,
+            publicKey = publicKey,
+            privateKey = privateKey,
+            subject = None
+          ), 10.seconds)
+          val status = response.getStatusCode
+          val body = response.getResponseBody
+          println("status = " + status)
+          println("body = " + body)
+          val s = new Status(status)
+          s(body)
+        }finally{
+          c.close()
+        }
       case e: JsError =>
         println(e)
         println(request.body)
