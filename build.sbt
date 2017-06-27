@@ -1,14 +1,15 @@
-scalaVersion := "2.11.11"
+scalaVersion := "2.12.2"
 
 name := "webpush-scala"
 
 libraryDependencies ++= (
   // https://github.com/MartijnDwars/web-push/pull/28
   ("nl.martijndwars" % "web-push" % "3.0.0").exclude("org.apache.httpcomponents", "fluent-hc") ::
-  ("com.github.xuwei-k" %% "play-json-extra" % "0.4.3") ::
+  ("com.github.xuwei-k" %% "play-json-extra" % "0.5.0") ::
   ("org.webjars" % "clipboard.js" % "1.6.1") ::
   ("org.webjars" % "jquery" % "3.2.0") ::
-  ("org.webjars" %% "webjars-play" % "2.5.0-3") ::
+  ("org.webjars" %% "webjars-play" % "2.6.0-M1") :: // TODO https://github.com/webjars/webjars-play/pull/69
+  guice ::
   Nil
 )
 
@@ -18,7 +19,6 @@ fork in run := true
 scalacOptions ++= (
   "-deprecation" ::
   "-unchecked" ::
-  "-Xlint" ::
   "-language:existentials" ::
   "-language:higherKinds" ::
   "-language:implicitConversions" ::
