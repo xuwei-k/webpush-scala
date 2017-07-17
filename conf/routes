@@ -3,5 +3,5 @@ POST  /                       webpush.Main.send
 
 GET   /sw.js                  controllers.Assets.at(path="/public/javascripts", file="sw.js")
 GET   /favicon.ico            controllers.Assets.at(path="/public", file="favicon.ico")
-GET   /webjars/*file          controllers.WebJarAssets.at(file)
+->    /webjars                webjars.Routes
 GET   /assets/*file           controllers.Assets.at(path="/public", file)

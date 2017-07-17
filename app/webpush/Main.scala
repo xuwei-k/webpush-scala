@@ -5,11 +5,12 @@ import javax.inject.Inject
 import play.api.mvc._
 import nl.martijndwars.webpush._
 import org.bouncycastle.jce.provider.BouncyCastleProvider
+import org.webjars.play.WebJarsUtil
 import play.api.libs.json.{JsError, JsSuccess}
 
 import scala.io.Source
 
-class Main @Inject()(webJarAssets: controllers.WebJarAssets) extends Controller {
+class Main @Inject()(webjar: WebJarsUtil, c: ControllerComponents) extends AbstractController(c) {
 
   java.security.Security.addProvider(new BouncyCastleProvider())
 
@@ -28,10 +29,10 @@ class Main @Inject()(webJarAssets: controllers.WebJarAssets) extends Controller 
     Utils.loadPublicKey(publicKeyEncoded)
 
   val view = Action{
-    Ok(views.html.main(publicKeyHexStrings, webJarAssets))
+    Ok(views.html.main(publicKeyHexStrings, webjar))
   }
 
-  val send = Action(BodyParsers.parse.json) { request =>
+  val send = Action(c.parsers.json) { request =>
     request.body.validate[SendRequest] match {
       case JsSuccess(value, _) =>
         val notification = value.toNotification

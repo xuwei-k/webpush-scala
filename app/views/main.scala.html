@@ -1,9 +1,9 @@
-@(publicKey: String, webjars: WebJarAssets)
+@(publicKey: String, webjars: org.webjars.play.WebJarsUtil)
 
 <html>
 <head>
-  <script type='text/javascript' src='@routes.WebJarAssets.at(webjars.locate("jquery.js"))'></script>
-  <script type='text/javascript' src='@routes.WebJarAssets.at(webjars.locate("clipboard.js"))'></script>
+  @Html(webjars.script("jquery.js"))
+  @Html(webjars.script("clipboard.js"))
 </head>
 <body>
 
