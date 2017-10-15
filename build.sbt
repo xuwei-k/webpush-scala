@@ -3,8 +3,7 @@ scalaVersion := "2.12.3"
 name := "webpush-scala"
 
 libraryDependencies ++= (
-  // https://github.com/MartijnDwars/web-push/pull/28
-  ("nl.martijndwars" % "web-push" % "3.0.0").exclude("org.apache.httpcomponents", "fluent-hc") ::
+  ("nl.martijndwars" % "web-push" % "3.0.1").exclude("org.apache.httpcomponents", "fluent-hc") ::
   ("com.github.xuwei-k" %% "play-json-extra" % "0.5.0") ::
   ("org.webjars" % "clipboard.js" % "1.7.1") ::
   ("org.webjars" % "jquery" % "3.2.1") ::
