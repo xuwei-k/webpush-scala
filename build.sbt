@@ -1,4 +1,4 @@
-scalaVersion := "2.12.3"
+scalaVersion := "2.12.4"
 
 name := "webpush-scala"
 
@@ -7,7 +7,7 @@ libraryDependencies ++= (
   ("com.github.xuwei-k" %% "play-json-extra" % "0.5.0") ::
   ("org.webjars" % "clipboard.js" % "1.7.1") ::
   ("org.webjars" % "jquery" % "3.2.1") ::
-  ("org.webjars" %% "webjars-play" % "2.6.1") ::
+  ("org.webjars" %% "webjars-play" % "2.6.2") ::
   guice ::
   Nil
 )
