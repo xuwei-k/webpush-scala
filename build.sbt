@@ -1,3 +1,6 @@
+import scala.collection.JavaConverters._
+import java.lang.management.ManagementFactory
+
 scalaVersion := "2.12.7"
 
 name := "webpush-scala"
@@ -27,7 +30,7 @@ scalacOptions ++= (
 
 enablePlugins(PlayScala)
 
-javaOptions ++= sys.process.javaVmArguments.filter(
+javaOptions ++= ManagementFactory.getRuntimeMXBean.getInputArguments.asScala.toList.filter(
   a => Seq("-Xmx", "-Xms", "-XX").exists(a.startsWith)
 )
 
