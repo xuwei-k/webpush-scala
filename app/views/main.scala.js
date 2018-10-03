@@ -162,5 +162,5 @@ $('#submit_webpush_request').click(function() {
 });
 
 $(function () {
-  const clipboard = new Clipboard('.btn');
+  const clipboard = new ClipboardJS('.btn');
 });
