@@ -18,7 +18,7 @@ final case class SendRequest(
     new Notification(
       endpoint,
       Utils.loadPublicKey(publicKey),
-      Utils.base64Decode(userAuth),
+      Base64Encoder.decode(userAuth),
       payload.getBytes(StandardCharsets.UTF_8),
       ttl
     )

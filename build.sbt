@@ -8,7 +8,7 @@ scalaVersion := "2.12.7"
 name := "webpush-scala"
 
 libraryDependencies ++= (
-  ("nl.martijndwars" % "web-push" % "3.1.1") ::
+  ("nl.martijndwars" % "web-push" % "4.0.0") ::
   ("com.github.xuwei-k" %% "play-json-extra" % "0.5.1") ::
   ("org.webjars" % "clipboard.js" % "2.0.0") ::
   ("org.webjars" % "jquery" % "3.3.1") ::
