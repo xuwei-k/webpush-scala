@@ -2,8 +2,8 @@
 
 <html>
 <head>
-  @Html(webjars.script("jquery.js"))
-  @Html(webjars.script("clipboard.js"))
+  @webjars.locate("jquery.js").script()
+  @webjars.locate("clipboard.js").script()
 </head>
 <body>
 

@@ -3,16 +3,16 @@ import java.lang.management.ManagementFactory
 
 herokuAppName in Compile := "webpush-scala"
 
-scalaVersion := "2.12.8"
+scalaVersion := "2.13.0"
 
 name := "webpush-scala"
 
 libraryDependencies ++= (
   ("nl.martijndwars" % "web-push" % "4.0.0") ::
-  ("com.github.xuwei-k" %% "play-json-extra" % "0.5.2") ::
+  ("com.github.xuwei-k" %% "play-json-extra" % "0.6.2") ::
   ("org.webjars" % "clipboard.js" % "2.0.4") ::
   ("org.webjars" % "jquery" % "3.4.1") ::
-  ("org.webjars" %% "webjars-play" % "2.6.2") ::
+  ("org.webjars" %% "webjars-play" % "2.7.3") ::
   guice ::
   Nil
 )
