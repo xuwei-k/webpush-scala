@@ -3,7 +3,7 @@ import java.lang.management.ManagementFactory
 
 herokuAppName in Compile := "webpush-scala"
 
-scalaVersion := "2.13.1"
+scalaVersion := "2.13.4"
 
 name := "webpush-scala"
 
