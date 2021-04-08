@@ -149,7 +149,7 @@ $('#submit_webpush_request').click(function() {
   console.log(json);
 
   $.post({
-    url: "@webpush.routes.Main.send()",
+    url: "@webpush.routes.Main.send",
     data: JSON.stringify(json),
     contentType: 'application/JSON',
     success: function(result, textStatus, xhr) {
