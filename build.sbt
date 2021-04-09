@@ -1,7 +1,7 @@
 import scala.collection.JavaConverters._
 import java.lang.management.ManagementFactory
 
-herokuAppName in Compile := "webpush-scala"
+Compile / herokuAppName := "webpush-scala"
 
 scalaVersion := "2.13.5"
 
@@ -17,8 +17,8 @@ libraryDependencies ++= (
   Nil
 )
 
-fork in Test := true
-fork in run := true
+Test / fork := true
+run / fork := true
 
 scalacOptions ++= (
   "-deprecation" ::
