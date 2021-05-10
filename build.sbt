@@ -12,7 +12,7 @@ libraryDependencies ++= (
   ("com.github.xuwei-k" %% "play-json-extra" % "0.8.0") ::
   ("org.webjars" % "clipboard.js" % "2.0.6") ::
   ("org.webjars" % "jquery" % "3.6.0") ::
-  ("org.webjars" %% "webjars-play" % "2.8.0-1") ::
+  ("org.webjars" %% "webjars-play" % "2.8.0") ::
   guice ::
   Nil
 )
