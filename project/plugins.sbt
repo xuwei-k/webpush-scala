@@ -10,6 +10,6 @@ scalacOptions ++= (
 
 libraryDependencySchemes += "org.scala-lang.modules" %% "scala-xml" % "always"
 
-addSbtPlugin("com.typesafe.play" % "sbt-plugin" % "2.9.0")
+addSbtPlugin("org.playframework" % "sbt-plugin" % "3.0.0")
 
 addSbtPlugin("com.heroku" % "sbt-heroku" % "2.1.4")
