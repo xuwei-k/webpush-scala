@@ -8,6 +8,6 @@ scalacOptions ++= (
   Nil
 )
 
-addSbtPlugin("org.playframework" % "sbt-plugin" % "3.0.6")
+addSbtPlugin("org.playframework" % "sbt-plugin" % "3.0.7")
 
 addSbtPlugin("com.heroku" % "sbt-heroku" % "2.1.4")
