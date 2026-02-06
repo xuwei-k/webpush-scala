@@ -20,13 +20,9 @@ libraryDependencies ++= (
 Test / fork := true
 run / fork := true
 
-scalacOptions ++= (
-  "-deprecation" ::
-  "-unchecked" ::
-  "-language:existentials" ::
-  "-language:higherKinds" ::
-  "-language:implicitConversions" ::
-  Nil
+scalacOptions ++= Seq(
+  "-deprecation",
+  "-unchecked",
 )
 
 enablePlugins(PlayScala)

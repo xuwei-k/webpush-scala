@@ -1,11 +1,7 @@
-scalacOptions ++= (
-  "-deprecation" ::
-  "-unchecked" ::
-  "-language:existentials" ::
-  "-language:higherKinds" ::
-  "-language:implicitConversions" ::
-  "-Yno-adapted-args" ::
-  Nil
+scalacOptions ++= Seq(
+  "-deprecation",
+  "-unchecked",
+  "-Yno-adapted-args",
 )
 
 addSbtPlugin("org.playframework" % "sbt-plugin" % "3.0.10")
