@@ -4,6 +4,6 @@ scalacOptions ++= Seq(
   "-Yno-adapted-args",
 )
 
-addSbtPlugin("org.playframework" % "sbt-plugin" % "3.0.10")
+addSbtPlugin("org.playframework" % "sbt-plugin" % "3.0.11")
 
 addSbtPlugin("com.heroku" % "sbt-heroku" % "2.1.4")
