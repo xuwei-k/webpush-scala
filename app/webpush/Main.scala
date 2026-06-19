@@ -1,6 +1,6 @@
 package webpush
 
-import javax.inject.Inject
+import jakarta.inject.Inject
 
 import play.api.mvc._
 import nl.martijndwars.webpush._
