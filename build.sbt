@@ -1,8 +1,6 @@
 import scala.collection.JavaConverters._
 import java.lang.management.ManagementFactory
 
-Compile / herokuAppName := "webpush-scala"
-
 scalaVersion := "2.13.18"
 
 name := "webpush-scala"

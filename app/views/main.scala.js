@@ -113,7 +113,7 @@ const setSubscription = function(sub) {
 
     document.querySelector('#submit_by_curl').innerHTML =
 `curl -H "Content-type: application/json" \\
--X POST https://webpush-scala.herokuapp.com \\
+-X POST ${window.location.origin} \\
 -d '{
   "payload" : "${$("#payload").val()}",
   "endpoint" : "${endpoint}",

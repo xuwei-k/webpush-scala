@@ -5,5 +5,3 @@ scalacOptions ++= Seq(
 )
 
 addSbtPlugin("org.playframework" % "sbt-plugin" % "3.0.11")
-
-addSbtPlugin("com.heroku" % "sbt-heroku" % "2.1.4")
