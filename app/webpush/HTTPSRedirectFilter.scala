@@ -1,7 +1,7 @@
 package webpush
 
 import org.apache.pekko.stream.Materializer
-import javax.inject.Inject
+import jakarta.inject.Inject
 import play.api.mvc._
 import scala.concurrent.{ExecutionContext, Future}
 
