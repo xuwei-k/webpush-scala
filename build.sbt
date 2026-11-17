@@ -1,7 +1,7 @@
 import scala.jdk.CollectionConverters._
 import java.lang.management.ManagementFactory
 
-scalaVersion := "2.13.18"
+scalaVersion := "3.9.0"
 
 name := "webpush-scala"
 

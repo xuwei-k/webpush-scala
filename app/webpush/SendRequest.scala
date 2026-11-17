@@ -25,8 +25,8 @@ final case class SendRequest(
 }
 
 object SendRequest{
-  implicit val format: OFormat[SendRequest] =
-    CaseClassFormats(apply _, unapply _)(
+  given OFormat[SendRequest] =
+    CaseClassFormats(apply, (x: SendRequest) => Option(Tuple.fromProductTyped(x)))(
       "endpoint",
       "publicKey",
       "userAuth",
