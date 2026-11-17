@@ -9,7 +9,7 @@ libraryDependencies ++= (
   ("nl.martijndwars" % "web-push" % "4.0.0") ::
   ("com.github.xuwei-k" %% "play-json-extra" % "0.10.0") ::
   ("org.webjars" % "clipboard.js" % "2.0.11") ::
-  ("org.webjars" % "jquery" % "4.0.0") ::
+  ("org.webjars" % "jquery" % "4.1.0") ::
   ("org.webjars" %% "webjars-play" % "3.1.0-M5") ::
   guice ::
   Nil
