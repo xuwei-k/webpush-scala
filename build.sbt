@@ -29,4 +29,4 @@ javaOptions ++= ManagementFactory.getRuntimeMXBean.getInputArguments.asScala.toL
   a => Seq("-Xmx", "-Xms", "-XX").exists(a.startsWith)
 )
 
-licenses := Seq("MIT License" -> url("https://opensource.org/licenses/MIT"))
+licenses := Seq("MIT License" -> uri("https://opensource.org/licenses/MIT"))
